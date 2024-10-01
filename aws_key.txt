@@ -1,0 +1,4 @@
+[sso_engineer]
+aws_access_key_id     = ASIAXGYHSEEE3MMGIMFDDD
+aws_secret_access_key = HtmR8foP5gdddeeeyHpApW4DYMS0bHrhvn2w0AM
+aws_session_token     = FwoGZXIvYXdzEGAaDIW/8gYTK3zGFZEgFyL/AaJpEvuxiE+wyN1t4oYr+65Iy7HyMRRScnBdk7c4us6qS9jsAA9pqkYBHF9oeNuQ85f0K6i6eXE1LvxUO/WT4WLkpe3rfdeedrfrPtJYLoFgOVRpyn00tAV6s/3urXoW/54/S1pX7PwFDVfDbEVYJ2nTcZfB1wDzKvZgoAF7xCrBeQs+NKu35wuabPIeK1cAMpKWfUtvOHbG2zGfrPYsgdjVfxbBtEl7l5VIcz0kkCJj+s9y/H1ijw65C2BjIrfsGsHcpCGK6MFKfmBvO3Br+tsl5NHlpRTbZRmzhN+en3qHR4sS75HrZB0g==

@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "3fe016bf-231a-429f-981a-cc4ca1159524",
+		"name": "SCM-SASE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "233783",
+		"_collection_link": "https://lunar-crescent-859697.postman.co/workspace/xx~6469aeb2-2f47-4141-807a-ae00f0119f1c/collection/233783-3fe016bf-231a-429f-981a-cc4ca1159524?action=share&source=collection_link&creator=233783"
+	},
+	"item": [
+		{
+			"name": "Access token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "4c5384b0-8bf5-485f-8fee-26d3f4b84e51",
+						"username": "E2E-test-app@1986783617.iam.panserviceaccount.com"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "tsg_id:1986783617",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://auth.apps.paloaltonetworks.com/oauth2/access_token"
+			},
+			"response": []
+		},
+		{
+			"name": "Access token QA",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "75d2aa7c-4e9d-4f13-8a9e-fe0187da9a99",
+						"username": "svc-casbsaasapiqa@1626251102.iam.panserviceaccount.com"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "tsg_id:1626251102",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://auth.qa.appsvc.paloaltonetworks.com/oauth2/access_token"
+			},
+			"response": []
+		},
+		{
+			"name": "roles QA",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "75d2aa7c-4e9d-4f13-8a9e-fe0187da9a99",
+						"username": "svc-casbsaasapiqa@1626251102.iam.panserviceaccount.com"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "tsg_id:1626251102",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://auth.qa.appsvc.paloaltonetworks.com/oauth2/access_token"
+			},
+			"response": []
+		},
+		{
+			"name": "Access token Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "dfa4640d-52b4-4289-8b03-fd0b26fd28d1",
+						"username": "testuser@1626251102.iam.panserviceaccount.com"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "tsg_id:1626251102",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://auth.apps.paloaltonetworks.com/oauth2/access_token"
+			},
+			"response": []
+		},
+		{
+			"name": "get cloud Asset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJraWQiOiJyc2Etc2lnbi1wa2NzMS0yMDQ4LXNoYTI1Ni8xIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJjNjljODIwNy0xMDc4LTQ3YTMtOTNmZS1mNmY4OGMwZDFmMTkiLCJjdHMiOiJPQVVUSDJfU1RBVEVMRVNTX0dSQU5UIiwiYXVkaXRUcmFja2luZ0lkIjoiM2NlZTZhNTEtZWQ1Ny00ZGY0LWE4ZGMtOTBkYmI3MDcyZDlhLTU3NDExOTIiLCJzdWJuYW1lIjoiYzY5YzgyMDctMTA3OC00N2EzLTkzZmUtZjZmODhjMGQxZjE5IiwiaXNzIjoiaHR0cHM6Ly9hdXRoLnFhLmFwcHN2Yy5wYWxvYWx0b25ldHdvcmtzLmNvbTo0NDMvYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiVjBham9OXzRqaEtfOEJ2WEdZVnVGbFowS0kwIiwiYXVkIjoic3ZjLWNhc2JzYWFzYXBpcWFAMTYyNjI1MTEwMi5pYW0ucGFuc2VydmljZWFjY291bnQuY29tIiwibmJmIjoxNzIyNjkwNjMxLCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwic2NvcGUiOlsidHNnX2lkOjE2MjYyNTExMDIiLCJwcm9maWxlIiwiZW1haWwiXSwiYXV0aF90aW1lIjoxNzIyNjkwNjMxLCJyZWFsbSI6Ii8iLCJleHAiOjE3MjI2OTE1MzEsImlhdCI6MTcyMjY5MDYzMSwiZXhwaXJlc19pbiI6OTAwLCJqdGkiOiIyTVpraTN2TmNrVUdvWHJlczN3eTJ4ajhxeXciLCJ0c2dfaWQiOiIxNjI2MjUxMTAyIiwiYWNjZXNzIjp7InBybjoxNjI2MjUxMTAyOjo6OiI6WyJzdXBlcnVzZXIiXX19.HyrPPZ5fpUsE56_mKkNANahQzMliVXDJJlXg6NwPFvT27qNi17uQzsz1DtIXC-qeZ778QpQ30cFHVkqHcNC9sgDTqpeTKycqYixbyHCwCMqbJugZ99-Tcf2JWN9u-7u_HNzV7YyHsl56ofhue7AkNH-mXYzFcDSendF7iHGPmP7U7i3zXpQA2vds7XD5q9qUQuU1btdlIOCvHtaRHYfE75WQmr9zhLkVSxSzzbW4rl9H5LjqgU4eJcCnDZW_7PB10_0qjVLiyr7H20iJCLW7BWedHmO2mkfPXLmW18ndXYu9LH_fh1_2e1wBxNm-qAIOmuzNaK2zZL15y9_Oj94FGQ"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-jwt",
+						"value": "eyJ0eXAiOiJKV1QiLCJraWQiOiJyc2Etc2lnbi1wa2NzMS0yMDQ4LXNoYTI1Ni8xIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJjNjljODIwNy0xMDc4LTQ3YTMtOTNmZS1mNmY4OGMwZDFmMTkiLCJjdHMiOiJPQVVUSDJfU1RBVEVMRVNTX0dSQU5UIiwiYXVkaXRUcmFja2luZ0lkIjoiZDgzOTRkZTMtYmJmMi00MWQ0LTg4ZDMtMmUxYjVmMTYyYzUzLTQxMzc2ODQiLCJzdWJuYW1lIjoiYzY5YzgyMDctMTA3OC00N2EzLTkzZmUtZjZmODhjMGQxZjE5IiwiaXNzIjoiaHR0cHM6Ly9hdXRoLnFhLmFwcHN2Yy5wYWxvYWx0b25ldHdvcmtzLmNvbTo0NDMvYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiaE93bi1PaHpLTXhpVlNLbHIwS1RSQ1FEZXo4IiwiYXVkIjoic3ZjLWNhc2JzYWFzYXBpcWFAMTYyNjI1MTEwMi5pYW0ucGFuc2VydmljZWFjY291bnQuY29tIiwibmJmIjoxNzIyNTA4MTMxLCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwic2NvcGUiOlsidHNnX2lkOjE2MjYyNTExMDIiLCJwcm9maWxlIiwiZW1haWwiXSwiYXV0aF90aW1lIjoxNzIyNTA4MTMxLCJyZWFsbSI6Ii8iLCJleHAiOjE3MjI1MDkwMzEsImlhdCI6MTcyMjUwODEzMSwiZXhwaXJlc19pbiI6OTAwLCJqdGkiOiJaMjhKX056NnZKN2ZBdkRYb2dBMXZTemNmLTgiLCJ0c2dfaWQiOiIxNjI2MjUxMTAyIiwiYWNjZXNzIjp7InBybjoxNjI2MjUxMTAyOjo6OiI6WyJzdXBlcnVzZXIiXX19.BAWm19sMF0qIVICxHsooeCklO_eVoMfjcealxX24DEcEVuv9OgFuyuwuryUCvBwhxS3Q5bffyTuloH5aNY1LbTQuVt2rc7vzjRRu86qKSwF3K5m525LfftSNuzf9fqFlYAatKiHv80axA5SFqdXNBX1b3UOehVDh6_PdCsdbY9eqo3C28FXf0jqVtKIzM_DH-vSAzcnxu_Qj6F1fzwI29FlRUWF629oz7EkcAu9_h9fl_e8igAVeOdNuLnd5VgBjpNd24YwKh5K6fYJuTJ0aKYCL_RczZUcGMAwlAH1Zzy1yR8Rzt9HsCI19bxxoQwt4LbGHVn1Mz5w1u_ZmBbhjkQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://sase-saas-api.staging3.cirrotester.com/inline/prisma_saas/v1/cloud_assets?page=1&search[sort_order]=desc&search[cs_uids]=aed9cf4bcac36f3dc683393d8cf98a00&size=1&search[sort_field]=cloud_created_at&search[recent_from]=1_day_ago",
+					"protocol": "https",
+					"host": [
+						"sase-saas-api",
+						"staging3",
+						"cirrotester",
+						"com"
+					],
+					"path": [
+						"inline",
+						"prisma_saas",
+						"v1",
+						"cloud_assets"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "search[sort_order]",
+							"value": "desc"
+						},
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "search[cs_uids]",
+							"value": "aed9cf4bcac36f3dc683393d8cf98a00"
+						},
+						{
+							"key": "size",
+							"value": "1"
+						},
+						{
+							"key": "search[sort_field]",
+							"value": "cloud_created_at"
+						},
+						{
+							"key": "search[recent_from]",
+							"value": "1_day_ago"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

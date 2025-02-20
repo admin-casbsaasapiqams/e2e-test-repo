@@ -1,0 +1,13 @@
+
+Secret Key - RSA Private Key
+Copy code
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEA7vHLC8kZWqYMAf9FIYmaE7DdF8vhjBPr/1QUKl/sr2hRJ/QH
+...
+...
+-----END RSA PRIVATE KEY-----
+
+
+
+import boto3  def list_sqs_queues_with_prefix(prefix):     # Create a session using your credentials and region        # Create an SQS client     sqs = session.client('sqs')      # List queues with the specified prefixdd     response = sqs.list_queues(QueueNamePrefix=prefix)      # Extract and print the queue URLs     queue_urls = response.get('QueueUrls', [])     if queue_urls:         print(f"SQS queues starting with '{prefix}':")         for url in queue_urls:             print(url)     else:         print(f"No SQS queues found with the prefix '{prefix}'.")  if __name__ == "__main__":     prefix = "vpc_1_9bdf33cf27abf81181e7b9533a100d61"     list_sqs_queues_with_prefix(prefix)
+

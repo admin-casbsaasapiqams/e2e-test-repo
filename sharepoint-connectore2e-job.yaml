@@ -1,0 +1,68 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: prisma-saas-e2e-saas-connector-env-sales-act
+  generation: 1
+  labels:
+    e2e-task-name: prisma-saas-e2e-saas-connector-env
+    log: promtail
+  namespace: prisma-saas
+spec:
+  activeDeadlineSeconds: 28800
+  backoffLimit: 0
+  completionMode: NonIndexed
+  completions: 1
+  parallelism: 1
+  selector:
+  suspend: false
+  template:
+    metadata:
+      annotations:
+        proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'
+      labels:
+        log: promtail
+    spec:
+      automountServiceAccountToken: true
+      containers:
+      - command:
+        - /bin/sh
+        - -c
+        - |
+          java \
+            -XX:MaxRAMPercentage=80.0 \
+            -XX:TieredStopAtLevel=1 \
+            -Dspring.profiles.active=prod \
+            -Djavax.net.ssl.trustStorePassword=changeit \
+            -cp /app/resources:/app/classes:$JAVA_HOME/jar/*:/app/libs/* \
+            -Dspring.config.additional-location=file:/app/config/config.yml \
+            com.paloaltonetworks.prisma.saas.e2e.connector.SaaSConnectorTests test --package "com.paloaltonetworks.prisma.saas.e2e.connector" --pattern "com.paloaltonetworks.prisma.saas.e2e.connector.SalesforceScanningTest"
+          x=$(echo $?); echo $x; /usr/bin/curl -fsI -X POST http://localhost:15020/quitquitquit && exit $x
+        env:
+          - name: SERVICE_NAME
+            value: e2e-saas-connector
+        envFrom:
+        - secretRef:
+            name: e2e-msteams-secret
+        image: docker-prisma-saas.art.code.pan.run/prisma-saas-e2e-saas-connector-env:withTeams
+        imagePullPolicy: Always
+        name: test
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /app/config/
+          mountPropagation: None
+          name: config-mount
+      dnsPolicy: ClusterFirst
+      restartPolicy: Never
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: e2e-saas-connector-env
+      serviceAccountName: e2e-saas-connector-env
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: e2e-saas-connector-env-config-map
+        name: config-mount
+  ttlSecondsAfterFinished: 300
